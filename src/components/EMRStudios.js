@@ -18,10 +18,10 @@ const EMRStudios = () => {
     }
   };
   return (
-    <ListGroup variant='flush'>
-      {studios.map((s) => (
-        <EMRStudio key={s['StudioId']} studio={s}></EMRStudio>
-      ))}
+    <ListGroup  horizontal>
+        {studios.map((s) => (
+          <EMRStudio key={s['StudioId']} studio={s}></EMRStudio>
+        ))}
     </ListGroup>
   );
 };

@@ -84,7 +84,7 @@ const SageMakerNotebook = ({ notebook }) => {
     <>
       <ListGroup.Item className='m-2 d-flex align-items-center'>
         <IconContext.Provider value={{ className: 'shared-class', size: size }}>
-          <div className='vw-color flex-fill'>
+          <div className='vw-color'>
             <div className='mb-2 fw-bold'>{notebookInstanceName}</div>
             <Dropdown onSelect={handleModalShow}>
               Instance Type:
@@ -105,7 +105,8 @@ const SageMakerNotebook = ({ notebook }) => {
               </Dropdown.Menu>
             </Dropdown>
           </div>
-          <div>
+        </IconContext.Provider>
+        <div>
             <span className='mx-2'>
               {getIconFromStatus(notebookInstanceStatus)}
             </span>
@@ -117,7 +118,7 @@ const SageMakerNotebook = ({ notebook }) => {
               <></>
             )}
           </div>
-        </IconContext.Provider>
+
       </ListGroup.Item>
 
       <Modal show={showModal} onHide={handleModalClose}>
