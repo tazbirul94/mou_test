@@ -11,6 +11,7 @@ import {
 import CustomToast from './CustomToast';
 import { default as Button } from './CustomButton';
 import { redirectTo } from '../utils/utils';
+import DataCard from './DataCard';
 
 const instanceTypes = {
   'ml.t2.medium': {
@@ -120,42 +121,11 @@ const SageMakerNotebook = ({ notebook }) => {
           </div>
 
       </ListGroup.Item>
-
-      <Modal show={showModal} onHide={handleModalClose}>
-        <Modal.Header closeButton>
-          <Modal.Title>
-            Changing instance type for {notebookInstanceName}
-          </Modal.Title>
-        </Modal.Header>
-
-        <Modal.Body>
-          <p>
-            You are going to change your notebook instance type to:{' '}
-            {newInstanceType}
-          </p>
-          <i>{instanceTypes[newInstanceType].description}</i>
-          <p className='my-2'>
-            This action may cause disruptions of service. Are you sure?
-          </p>
-        </Modal.Body>
-
-        <Modal.Footer>
-          <Button
-            className='mx-2'
-            variant='secondary'
-            onClick={handleModalClose}
-          >
-            Close
-          </Button>
-          <Button
-            className='mx-2'
-            variant='primary'
-            onClick={saveNewInstanceType}
-          >
-            Save
-          </Button>
-        </Modal.Footer>
-      </Modal>
+      <DataCard instanceName={notebookInstanceName}
+      instanceType ={newInstanceType}
+      description = {instanceTypes[newInstanceType].description}
+      showModal={showModal}
+      />
 
       <ToastContainer className='p-3' position='bottom-center'>
         <CustomToast
