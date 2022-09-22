@@ -6,7 +6,8 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 function App() {
   // const [warning, setWarning] = React.useState(false);
   return (
-    <div class="container">
+    // <div class="container">
+    <div>
       <Header />
       <Content />
     </div>

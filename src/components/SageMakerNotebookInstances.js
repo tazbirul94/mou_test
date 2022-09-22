@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import SageMakerNotebook from './SageMakerNotebook';
 import { getNotebooks } from '../api/APIs';
-import { ListGroup } from 'react-bootstrap';
+import { ListGroup, ListGroupItem } from 'react-bootstrap';
 
 const SageMakerNotebookInstances = () => {
   const [notebooks, setNotebooks] = useState([]);
@@ -19,9 +19,10 @@ const SageMakerNotebookInstances = () => {
   };
 
   return (
-    <ListGroup variant='flush'>
+    <ListGroup variant='flush' className='m-3 d-flex align-items-center'>
       {notebooks.map((n) => (
-        <SageMakerNotebook key={n['NotebookInstanceName']} notebook={n} />
+          <SageMakerNotebook key={n['NotebookInstanceName']} notebook={n} />
+      
       ))}
     </ListGroup>
   );

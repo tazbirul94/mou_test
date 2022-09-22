@@ -82,7 +82,7 @@ const SageMakerNotebook = ({ notebook }) => {
 
   return (
     <>
-      <ListGroup.Item className='m-2 d-flex align-items-center'>
+      <ListGroup.Item className='m-3 d-flex align-items-center'>
         <IconContext.Provider value={{ className: 'shared-class', size: size }}>
           <div className='vw-color'>
             <div className='mb-2 fw-bold'>{notebookInstanceName}</div>

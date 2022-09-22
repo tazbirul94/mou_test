@@ -18,7 +18,7 @@ const EMRStudios = () => {
     }
   };
   return (
-    <ListGroup  horizontal>
+    <ListGroup variant='flush' className='m-3 d-flex align-items-center'>
         {studios.map((s) => (
           <EMRStudio key={s['StudioId']} studio={s}></EMRStudio>
         ))}
